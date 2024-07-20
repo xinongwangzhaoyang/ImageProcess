@@ -23,8 +23,8 @@ def process_images(input_folder, output_folder, crop_width, crop_height):
             cropped_image.save(os.path.join(output_folder, filename))
 
 
-input_folder = './../images'  # 替换为实际输入文件夹路径
-output_folder = './outputs/1000x1000'  # 替换为实际输出文件夹路径
+input_folder = ''  # 替换为实际输入文件夹路径
+output_folder = ''  # 替换为实际输出文件夹路径
 crop_width = 1000  # 设置裁切区域的宽度
 crop_height = 1000  # 设置裁切区域的高度
 
