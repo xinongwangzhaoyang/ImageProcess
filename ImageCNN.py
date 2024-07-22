@@ -9,10 +9,8 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
 # 定义图片和Excel路径
-# image_folder = r'./../images'       # 原始图像  R2 --61.029823278158545  RMSE 32.524539947509766
-image_folder = r'./outputs/1000x1000'   # R²: -60.994477707557195    RMSE: 32.5152702331543
-image_folder = r'./outputs/200x200'
-excel_path = './SOM.xlsx'
+image_folder = r'./你的文件路径'  # 此处为存放图片的文件夹路径
+excel_path = './你的文件.xlsx'   # 此处为Excel文件
 
 # 读取Excel文件
 df = pd.read_excel(excel_path)
@@ -23,7 +21,7 @@ targets = []
 
 # 读取图片和对应的目标值
 for index, row in df.iterrows():
-    image_path = os.path.join(image_folder, row['Filename'])     # 改成自己文件列名
+    image_path = os.path.join(image_folder, row['Filename'])     # 改成自己文件列名，这一列的内容为图片的名称，带扩展名的图片
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     if image is not None:
         # 缩放图片到256x256
